@@ -29,18 +29,18 @@
     "firstCreatedAt": null,
     "implementations": {
         "apiKey": {
+            "id": "apiKey",
             "authMethodId": "apiKey",
+            "canDescribe": true,
+            "label": "Enter an SAP SuccessFactors API Key",
             "maxConnectionCount": -1,
-            "params": [
-                {
-                    "id": "apiKey",
-                    "label": "API Key",
-                    "type": "string"
-                }
-            ]
+            "params": [{ "id": "apiKey", "label": "API Key", "type": "string" }]
         },
         "oAuth2": {
+            "id": "oAuth2",
             "authMethodId": "oAuth2",
+            "canDescribe": true,
+            "label": "Sign in using an SAP SuccessFactors Account",
             "maxConnectionCount": -1
         }
     },
@@ -53,5 +53,5 @@
     "vendorAccountURL": null,
     "vendorDocumentationURL": null,
     "vendorHomeURL": null,
-    "version": "0.0.12"
+    "version": "0.0.9"
 }

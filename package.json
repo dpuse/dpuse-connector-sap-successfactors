@@ -1,6 +1,6 @@
 {
-    "name": "@dpuse/dpuse-connector-template",
-    "version": "0.0.9",
+    "name": "@dpuse/dpuse-connector-sap-successfactors",
+    "version": "0.0.12",
     "private": false,
     "description": "Template scaffold for building new DPUse connectors.",
     "license": "MIT",
@@ -9,17 +9,17 @@
     "sideEffects": false,
     "homepage": "https://www.dpuse.app",
     "bugs": {
-        "url": "https://github.com/dpuse/dpuse-connector-template/issues"
+        "url": "https://github.com/dpuse/dpuse-connector-sap-successfactors/issues"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dpuse/dpuse-connector-template.git"
+        "url": "git+https://github.com/dpuse/dpuse-connector-sap-successfactors.git"
     },
-    "module": "./dist/dpuse-connector-template.es.js",
+    "module": "./dist/dpuse-connector-sap-successfactors.es.js",
     "types": "./dist/types/src/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/dpuse-connector-template.es.js",
+            "import": "./dist/dpuse-connector-sap-successfactors.es.js",
             "types": "./dist/types/src/index.d.ts"
         }
     },

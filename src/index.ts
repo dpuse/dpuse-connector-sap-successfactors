@@ -1,3 +1,15 @@
+/**
+ *
+ * https://accounts.sap.com/
+ * https://account.sap.com/
+ * https://api.sap.com/
+ * https://developers.sap.com/
+ *
+ * SAP Developer Site   :
+ * SAP Developer Console:
+ * SAP API Documentation: https://help.sap.com/doc/a7c08a422cc14e1eaaffee83610a981d/2205/en-US/SF_HCM_OData_API_DEV.pdf
+ */
+
 // ── DPUse Framework
 import type { ConnectionDescriptionConfig } from '@dpuse/dpuse-shared/component/connection';
 import { normalizeToError } from '@dpuse/dpuse-shared/errors';

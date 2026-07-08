@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-07-08T09:14:53.037Z",
+    "generatedAt": "2026-07-08T20:08:05.296Z",
     "integration": "vite",
     "sources": false,
     "gzip": false,
@@ -21,25 +21,25 @@
       "name": "[unassigned]",
       "type": "other",
       "format": "other",
-      "uncompressed": 2412,
+      "uncompressed": 2770,
       "gzip": 0,
-      "brotli": 614,
-      "parent": "dist/dpuse-connector-template.es.js"
+      "brotli": 706,
+      "parent": "dist/dpuse-connector-sap-successfactors.es.js"
     },
     {
       "kind": "filesystem",
       "name": "config.json",
       "type": "script",
       "format": "esm",
-      "uncompressed": 2353
+      "uncompressed": 2651
     },
     {
       "kind": "asset",
-      "name": "dist/dpuse-connector-template.es.js",
+      "name": "dist/dpuse-connector-sap-successfactors.es.js",
       "type": "script",
-      "uncompressed": 5657,
+      "uncompressed": 6015,
       "gzip": 0,
-      "brotli": 1158
+      "brotli": 1251
     },
     {
       "kind": "filesystem",
@@ -55,8 +55,8 @@
       "format": "esm",
       "uncompressed": 440,
       "gzip": 0,
-      "brotli": 154,
-      "parent": "dist/dpuse-connector-template.es.js"
+      "brotli": 155,
+      "parent": "dist/dpuse-connector-sap-successfactors.es.js"
     },
     {
       "kind": "filesystem",
@@ -73,13 +73,13 @@
       "uncompressed": 2805,
       "gzip": 0,
       "brotli": 390,
-      "parent": "dist/dpuse-connector-template.es.js"
+      "parent": "dist/dpuse-connector-sap-successfactors.es.js"
     }
   ],
   "connections": [
     {
       "kind": "entrypoint",
-      "source": "dist/dpuse-connector-template.es.js",
+      "source": "dist/dpuse-connector-sap-successfactors.es.js",
       "target": "src/index.ts",
       "original": null
     }
