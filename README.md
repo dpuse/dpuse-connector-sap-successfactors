@@ -16,7 +16,7 @@ DPUse (Data Positioning & Use) is an in-browser application that positions your 
 
 ## Introduction
 
-Template scaffold for building new DPUse connectors. Replace this description, and the sample action stubs in src/index.ts, with your connector's actual behaviour.
+Provides access to SAP SuccessFactors account(s) for retrieving data.
 
 <!-- OPENING_END -->
 
@@ -28,22 +28,22 @@ Connectors conform to a unified interface contract by implementing a specific su
 
 This connector is a Bidirectional connector that supports both read and write actions. Connectors can also function as a Source (read-only) or Destination (write-only), depending on the actions they support. The table below lists all connector actions and highlights those supported by this connector.
 
-| Action               | Supported |
-| :------------------- | :-------: |
-| Abort Operation      |     ✓     |
-| Audit Object Content |     ✓     |
-| Create Object        |     ✓     |
-| Describe Connection  |     ✓     |
-| Drop Object          |     ✓     |
-| Find Object          |     ✓     |
-| Get Readable Stream  |     ✓     |
-| Get Record           |     ✓     |
-| List Nodes           |     ✓     |
-| Preview Object       |     ✓     |
-| Remove Records       |     ✓     |
-| Retrieve Chunks      |     ✓     |
-| Retrieve Records     |     ✓     |
-| Upsert Records       |     ✓     |
+|Action|Supported|
+|:----|:-------:|
+| Abort Operation | ✓ |
+| Audit Object Content | ✓ |
+| Create Object | ✓ |
+| Describe Connection | ✓ |
+| Drop Object | ✓ |
+| Find Object | ✓ |
+| Get Readable Stream | ✓ |
+| Get Record | ✓ |
+| List Nodes | ✓ |
+| Preview Object | ✓ |
+| Remove Records | ✓ |
+| Retrieve Chunks | ✓ |
+| Retrieve Records | ✓ |
+| Upsert Records | ✓ |
 
 <!-- CONNECTOR_ACTIONS_END -->
 
@@ -71,9 +71,9 @@ _Requires [Node.js](https://nodejs.org/) 23.11 or later, [npm](https://www.npmjs
 
 License data is collected automatically on each release using [license-checker](https://github.com/RSeidelsohn/license-checker-rseidelsohn). The following table lists all production dependencies. These dependencies (including transitive ones) have been checked and confirmed to use BSD-3-Clause or MIT — all permissive, commercially-friendly licenses. Users of the uploaded library are covered by these checks; developers cloning this repository should independently verify development dependencies.
 
-| Dependency                                                   | Version | License(s) | Document                                                              |
-| :----------------------------------------------------------- | :-----: | :--------- | :-------------------------------------------------------------------- |
-| [@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared) | 0.3.737 | MIT        | [LICENSE](licenses/downloads/@dpuse/dpuse-shared@0.3.737-LICENSE.txt) |
+|Dependency|Version|License(s)|Document|
+|:-|:-:|:-|:-|
+|[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)|0.3.737|MIT|[LICENSE](licenses/downloads/@dpuse/dpuse-shared@0.3.737-LICENSE.txt)|
 
 <!-- DEPENDENCY_LICENSES_END -->
 

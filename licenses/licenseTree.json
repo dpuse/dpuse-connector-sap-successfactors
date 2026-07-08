@@ -1,5 +1,5 @@
 {
-  "version": "0.0.9",
+  "version": "0.0.14",
   "name": "@dpuse/dpuse-connector-sap-successfactors",
   "dependencies": {
     "@dpuse/dpuse-shared": {

@@ -5,7 +5,7 @@
     },
     "description": {
         "en": [
-            "Template scaffold for building new DPUse connectors. Replace this description, and the sample action stubs in src/index.ts, with your connector's actual behaviour."
+            "Provides access to SAP SuccessFactors account(s) for retrieving data."
         ]
     },
     "actionNames": [
@@ -53,5 +53,5 @@
     "vendorAccountURL": null,
     "vendorDocumentationURL": null,
     "vendorHomeURL": null,
-    "version": "0.0.14"
+    "version": "0.0.15"
 }
