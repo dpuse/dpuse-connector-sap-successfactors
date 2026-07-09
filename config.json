@@ -25,7 +25,7 @@
         "upsertRecords"
     ],
     "category": null,
-    "categoryId": "fileStore",
+    "categoryId": "application",
     "firstCreatedAt": null,
     "implementations": {
         "apiKey": {
@@ -53,5 +53,5 @@
     "vendorAccountURL": null,
     "vendorDocumentationURL": null,
     "vendorHomeURL": null,
-    "version": "0.0.17"
+    "version": "0.0.18"
 }
