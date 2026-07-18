@@ -50,8 +50,10 @@
     "status": null,
     "statusId": "alpha",
     "typeId": "connector",
+    "usage": null,
+    "usageId": "bidirectional",
     "vendorAccountURL": null,
     "vendorDocumentationURL": null,
     "vendorHomeURL": null,
-    "version": "0.0.18"
+    "version": "0.0.19"
 }
