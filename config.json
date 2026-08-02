@@ -4,9 +4,7 @@
         "en": "SAP SuccessFactors"
     },
     "description": {
-        "en": [
-            "Provides access to SAP SuccessFactors account(s) for retrieving data."
-        ]
+        "en": "Provides access to SAP SuccessFactors account(s) for retrieving data."
     },
     "actionNames": [
         "abortOperation",
@@ -55,5 +53,5 @@
     "vendorAccountURL": null,
     "vendorDocumentationURL": null,
     "vendorHomeURL": null,
-    "version": "0.0.19"
+    "version": "0.0.20"
 }

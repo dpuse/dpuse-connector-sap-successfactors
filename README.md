@@ -36,6 +36,7 @@ This connector is a Bidirectional connector that supports both read and write ac
 | Describe Connection | ✓ |
 | Drop Object | ✓ |
 | Find Object | ✓ |
+| Get Info |  |
 | Get Readable Stream | ✓ |
 | Get Record | ✓ |
 | List Nodes | ✓ |
@@ -73,7 +74,7 @@ License data is collected automatically on each release using [license-checker](
 
 |Dependency|Version|License(s)|Document|
 |:-|:-:|:-|:-|
-|[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)|0.3.737|MIT|[LICENSE](licenses/downloads/@dpuse/dpuse-shared@0.3.737-LICENSE.txt)|
+|[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)|0.3.760|MIT|[LICENSE](licenses/downloads/@dpuse/dpuse-shared@0.3.760-LICENSE.txt)|
 
 <!-- DEPENDENCY_LICENSES_END -->
 
@@ -83,7 +84,7 @@ License data is collected automatically on each release using [license-checker](
 
 The dependency tree below lists every package in this project — direct and transitive — along with its installed version, release date, and update status. Packages flagged ❗ have a newer version available; ⚠️ indicates a package that hasn't been updated in the last 6 months or longer. Neither flag necessarily indicates a problem: we let new releases stabilise before upgrading, and some packages are simply mature and stable, requiring no active development.
 
-- **[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)** 0.3.737 — this month: 2026-07-07
+- **[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)** 0.3.760 — this month: 2026-08-02
 
 <!-- DEPENDENCY_TREE_END -->
 
@@ -95,12 +96,14 @@ The Bundle Analysis Report is generated automatically on each release using [Son
 
 _Note: Sonda's Vite reports currently exclude CSS files, since Vite does not generate source maps for CSS._
 
-| Chunk/Module/File                                                            | Composition                  |
-| :--------------------------------------------------------------------------- | :--------------------------- |
-| dist/dpuse-connector-sap-successfactors.es.js                                | 5.9 kB · brotli 1.2 kB       |
-| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts                                       | `█████████░░░░░░░░░░░` 46.6% |
-| &nbsp;&nbsp;&nbsp;&nbsp;(unassigned) → [unassigned]                          | `█████████░░░░░░░░░░░` 46.1% |
-| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared-errors.es.js | `█░░░░░░░░░░░░░░░░░░░` 7.3%  |
+|Chunk/Module/File|Composition|
+|:------ |:-----------|
+| dist/dpuse-connector-sap-successfactors.es.js | 6.4 kB · brotli 1.8 kB |
+| &nbsp;&nbsp;&nbsp;&nbsp;(unassigned) → [unassigned] | `██████████░░░░░░░░░░` 50.4% |
+| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts | `█████████░░░░░░░░░░░` 42.9% |
+| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared-errors.es.js | `█░░░░░░░░░░░░░░░░░░░` 6.7% |
+
+(unassigned) = bytes Sonda can't trace to a specific source line (whitespace, stray keywords, bundler-injected region markers) — not actual missing/unknown code.
 
 <!-- BUNDLE_END -->
 
