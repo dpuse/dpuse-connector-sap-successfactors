@@ -11,12 +11,10 @@
  */
 
 // ── DPUse Framework
-import type { ConnectionDescriptionConfig } from '@dpuse/dpuse-shared/component/connection';
-import { normalizeToError } from '@dpuse/dpuse-shared/errors';
-import type { ToolConfig } from '@dpuse/dpuse-shared/component/module/tool';
 import type {
     AuditObjectContentOptions,
     AuditObjectContentResult,
+    ConnectionDescriptionConfig,
     ConnectorConfig,
     ConnectorInterface,
     ConnectorUtilities,
@@ -30,15 +28,18 @@ import type {
     GetRecordResult,
     ListNodesOptions,
     ListNodesResult,
+    ParsingRecord,
+    PreviewConfig,
     PreviewObjectOptions,
     RecordRetrievalTypeId,
     RemoveRecordsOptions,
     RetrieveChunksOptions,
     RetrieveRecordsOptions,
     RetrieveRecordsSummary,
+    ToolConfig,
     UpsertRecordsOptions
-} from '@dpuse/dpuse-shared/component/module/connector';
-import type { ParsingRecord, PreviewConfig } from '@dpuse/dpuse-shared/component/dataView';
+} from '@dpuse/dpuse-shared';
+import { normalizeToError } from '@dpuse/dpuse-shared';
 
 // ── Data
 import config from '~/config.json';
@@ -49,7 +50,7 @@ import config from '~/config.json';
 // whichever methods your connector doesn't need, and trim config.json's actionNames to match what's left. Actions
 // with a real reference implementation among the sibling connectors are noted; the rest (describeConnection,
 // retrieveChunks) follow the same abortController/try-catch-finally shape but have no existing reference. Use
-// loadTool(this.toolConfigs, 'tool-name') from '@dpuse/dpuse-shared/component/module/tool' to lazily load a
+// loadTool(this.toolConfigs, 'tool-name') from '@dpuse/dpuse-shared' to lazily load a
 // DPUse tool package (e.g. csv-parse, file-operators) once your implementation needs one.
 export class Connector implements ConnectorInterface {
     abortController: AbortController | undefined;
@@ -150,6 +151,7 @@ export class Connector implements ConnectorInterface {
         this.abortController = new AbortController();
 
         try {
+            // eslint-disable-next-line unicorn/no-useless-promise-resolve-reject
             return await Promise.resolve({} as ReadableStream<Uint8Array>);
         } catch (error) {
             throw normalizeToError(error);
