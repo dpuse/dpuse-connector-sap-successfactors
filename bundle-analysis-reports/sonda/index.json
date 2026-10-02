@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-09-30T15:38:06.404Z",
+    "generatedAt": "2026-10-02T10:27:59.971Z",
     "integration": "vite",
     "sources": false,
     "gzip": true,
@@ -22,7 +22,7 @@
       "type": "other",
       "format": "other",
       "uncompressed": 4338,
-      "gzip": 1578,
+      "gzip": 1580,
       "brotli": 0,
       "parent": "dist/dpuse-connector-sap-successfactors.es.js"
     },
@@ -38,7 +38,7 @@
       "name": "dist/dpuse-connector-sap-successfactors.es.js",
       "type": "script",
       "uncompressed": 15439,
-      "gzip": 4546,
+      "gzip": 4547,
       "brotli": 0
     },
     {
@@ -54,7 +54,7 @@
       "type": "script",
       "format": "esm",
       "uncompressed": 8296,
-      "gzip": 2494,
+      "gzip": 2493,
       "brotli": 0,
       "parent": "dist/dpuse-connector-sap-successfactors.es.js"
     },
