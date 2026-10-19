@@ -44,6 +44,7 @@
             "maxConnectionCount": -1
         }
     },
+    "itemTypeId": "table",
     "lastUpdatedAt": null,
     "status": null,
     "statusId": "alpha",
@@ -53,5 +54,5 @@
     "vendorAccountURL": null,
     "vendorDocumentationURL": null,
     "vendorHomeURL": null,
-    "version": "1.0.108"
+    "version": "1.0.109"
 }
