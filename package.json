@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-connector-sap-successfactors",
-    "version": "1.0.109",
+    "version": "1.0.110",
     "private": false,
     "description": "Template scaffold for building new DPUse connectors.",
     "license": "MIT",
