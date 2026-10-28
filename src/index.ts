@@ -19,6 +19,7 @@ import type {
     ConnectorConfig,
     ConnectorInterface,
     ConnectorUtilities,
+    ContentAuditConfig,
     CreateObjectOptions,
     DescribeConnectionOptions,
     DropObjectOptions,
@@ -81,7 +82,7 @@ export class Connector implements ConnectorInterface {
         try {
             await Promise.resolve();
             // Audit the object at options.path, reporting progress via chunk().
-            return { processedRowCount: 0, durationMs: 0 };
+            return { contentAuditConfig: {} as ContentAuditConfig };
         } catch (error) {
             throw normalizeToError(error);
         } finally {
