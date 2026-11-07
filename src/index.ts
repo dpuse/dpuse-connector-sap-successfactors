@@ -30,7 +30,7 @@ import type {
     GetRecordResult,
     ListNodesOptions,
     ListNodesResult,
-    ParsingRecord,
+    ParsedRecord,
     PreviewObjectOptions,
     PreviewObjectResult,
     RecordRetrievalTypeId,
@@ -82,7 +82,7 @@ export class Connector implements ConnectorInterface {
         try {
             await Promise.resolve();
             // Audit the object at options.path, reporting progress via chunk().
-            return { contentAuditConfig: {} as ContentAuditConfig };
+            return { contentAuditConfig: {} as ContentAuditConfig, hasHeaders: false };
         } catch (error) {
             throw normalizeToError(error);
         } finally {
@@ -235,7 +235,7 @@ export class Connector implements ConnectorInterface {
     // Retrieves all records from an object node using streaming and chunked processing — see dpuse-connector-dropbox
     async retrieveRecords(
         options: RetrieveRecordsOptions,
-        chunk: (typeId: RecordRetrievalTypeId, records: ParsingRecord[]) => void,
+        chunk: (typeId: RecordRetrievalTypeId, records: ParsedRecord[]) => void,
         complete: (result: RetrieveRecordsSummary) => void
     ): Promise<void> {
         this.abortController = new AbortController();

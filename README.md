@@ -40,6 +40,7 @@ This connector is a Bidirectional connector that supports both read and write ac
 | :------------------- | :-------: |
 | Abort Operation      |     ✓     |
 | Audit Object Content |     ✓     |
+| Close Store          |           |
 | Create Object        |     ✓     |
 | Describe Connection  |     ✓     |
 | Drop Object          |     ✓     |
@@ -48,7 +49,10 @@ This connector is a Bidirectional connector that supports both read and write ac
 | Get Readable Stream  |     ✓     |
 | Get Record           |     ✓     |
 | List Nodes           |     ✓     |
+| Load Object Records  |           |
+| Open Store           |           |
 | Preview Object       |     ✓     |
+| Query Records        |           |
 | Remove Records       |     ✓     |
 | Retrieve Chunks      |     ✓     |
 | Retrieve Records     |     ✓     |
@@ -84,14 +88,14 @@ License data is updated each time `npm run document` is run, using [license-chec
 
 | Dependency                                                   | Version | License(s) | Document                                                              |
 | :----------------------------------------------------------- | :-----: | :--------- | :-------------------------------------------------------------------- |
-| [@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared) | 1.0.126 | MIT        | [LICENSE](licenses/downloads/@dpuse/dpuse-shared@1.0.126-LICENSE.txt) |
+| [@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared) | 1.0.188 | MIT        | [LICENSE](licenses/downloads/@dpuse/dpuse-shared@1.0.188-LICENSE.txt) |
 | [valibot](https://github.com/open-circle/valibot)            |  1.5.0  | MIT        | [LICENSE](licenses/downloads/valibot@1.5.0-LICENSE.txt)               |
 
 ### Dependency Tree
 
 The dependency tree below shows how each package in the table above is reached — direct and transitive — along with its installed version, release date, and update status. A package that does not ship itself, such as one whose parts are bundled separately, is left out and what ships beneath it is shown in its place. Packages flagged ❗ have a newer version available; ⚠️ indicates a package that hasn't been updated in the last 6 months or longer. Neither flag necessarily indicates a problem: we let new releases stabilise before upgrading, and some packages are mature and stable (have limited or no dependencies), so they require no active development.
 
-- **[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)** 1.0.126 — this month: 2026-10-19
+- **[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)** 1.0.188 — this month: 2026-11-07
     - **[valibot](https://github.com/open-circle/valibot)** 1.5.0 — 1 mth ago: 2026-09-09
 
 <!-- DEPENDENCY_LICENSES_END -->
@@ -106,10 +110,10 @@ _Note: Sonda's Vite reports currently exclude CSS files, since Vite does not gen
 
 | Chunk/Module/File                                                     | Composition                                                                                   |
 | :-------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
-| **dist/dpuse-connector-sap-successfactors.es.js**                     | 15.2&nbsp;kB&nbsp;·&nbsp;gzip&nbsp;4.5&nbsp;kB&nbsp;·&nbsp;100.0%&nbsp;of&nbsp;the&nbsp;build |
-| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared.es.js | `███████████░░░░░░░░░`&nbsp;53.6%&nbsp;·&nbsp;8.1&nbsp;kB                                     |
-| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts                                | `████░░░░░░░░░░░░░░░░`&nbsp;18.0%&nbsp;·&nbsp;2.7&nbsp;kB                                     |
-| &nbsp;&nbsp;&nbsp;&nbsp;(bundler output, whitespace & JSON)           | `██████░░░░░░░░░░░░░░`&nbsp;28.3%&nbsp;·&nbsp;4.3&nbsp;kB                                     |
+| **dist/dpuse-connector-sap-successfactors.es.js**                     | 14.8&nbsp;kB&nbsp;·&nbsp;gzip&nbsp;4.4&nbsp;kB&nbsp;·&nbsp;100.0%&nbsp;of&nbsp;the&nbsp;build |
+| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared.es.js | `███████████░░░░░░░░░`&nbsp;52.6%&nbsp;·&nbsp;7.8&nbsp;kB                                     |
+| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts                                | `████░░░░░░░░░░░░░░░░`&nbsp;18.5%&nbsp;·&nbsp;2.7&nbsp;kB                                     |
+| &nbsp;&nbsp;&nbsp;&nbsp;(bundler output, whitespace & JSON)           | `██████░░░░░░░░░░░░░░`&nbsp;28.9%&nbsp;·&nbsp;4.3&nbsp;kB                                     |
 
 Bars show each row's share of its output file.
 
