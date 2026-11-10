@@ -16,7 +16,6 @@ import type {
     AuditObjectContentOptions,
     AuditObjectContentResult,
     ConnectionDescriptionConfig,
-    ConnectorConfig,
     ConnectorInterface,
     ConnectorUtilities,
     ContentAuditConfig,
@@ -42,9 +41,6 @@ import type {
     UpsertRecordsOptions
 } from '@dpuse/dpuse-shared';
 
-// ── Data
-import config from '~/config.json';
-
 // ── Connectors ───────────────────────────────────────────────────────────────────────────────────────────────────────
 
 // Every action from the ConnectorInterface contract is stubbed below so you can see the full surface area. Delete
@@ -54,14 +50,12 @@ import config from '~/config.json';
 // loadTool(this.toolConfigs, 'tool-name') from '@dpuse/dpuse-shared' to lazily load a
 // DPUse tool package (e.g. csv-parse, file-operators) once your implementation needs one.
 export class Connector implements ConnectorInterface {
-    abortController: AbortController | undefined;
-    readonly config: ConnectorConfig;
-    connectorUtilities: ConnectorUtilities;
-    readonly toolConfigs;
+    private abortController: AbortController | undefined; // The latest operation's. An operation that ends clears it only if no later one has replaced it.
+    private readonly connectorUtilities: ConnectorUtilities;
+    private readonly toolConfigs;
 
     constructor(connectorUtilities: ConnectorUtilities, toolConfigs: ToolConfig[]) {
         this.abortController = undefined;
-        this.config = config as ConnectorConfig;
         this.connectorUtilities = connectorUtilities;
         this.toolConfigs = toolConfigs;
     }
@@ -77,7 +71,8 @@ export class Connector implements ConnectorInterface {
 
     // Audit object content — see dpuse-connector-dropbox / dpuse-connector-file-store-emulator for a fuller reference
     async auditObjectContent(_options: AuditObjectContentOptions, _chunk: (recordCount: number, byteCount: number) => void): Promise<AuditObjectContentResult> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -86,13 +81,14 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Create an object at the specified path — see dpuse-connector-dexie-js for a fuller reference
     async createObject(_options: CreateObjectOptions): Promise<void> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -100,13 +96,14 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Describe the connection (no sibling reference implementation exists yet — stub follows the same shape as the rest)
     async describeConnection(_options: DescribeConnectionOptions): Promise<{ descriptionConfig: ConnectionDescriptionConfig }> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -114,14 +111,15 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Drop (delete) the object at the specified path — see dpuse-connector-dexie-js for a fuller reference
     // eslint-disable-next-line sonarjs/no-identical-functions -- placeholder stub, implement per action before shipping
     async dropObject(_options: DropObjectOptions): Promise<void> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -129,13 +127,14 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Find the folder path containing the specified object node — see dpuse-connector-dropbox / dpuse-connector-dexie-js
     async findObject(_options: FindObjectOptions): Promise<FindObjectResult> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -143,13 +142,14 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Get a readable stream for the specified object node path — see dpuse-connector-dropbox for a fuller reference
     async getReadableStream(_options: GetReadableStreamOptions): Promise<ReadableStream<Uint8Array>> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             // eslint-disable-next-line unicorn/no-useless-promise-resolve-reject -- Placeholder until this action is implemented.
@@ -157,13 +157,14 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Get a single record from the specified object node — see dpuse-connector-dexie-js for a fuller reference
     async getRecord(_options: GetRecordOptions): Promise<GetRecordResult> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -171,13 +172,14 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Lists all nodes (folders and objects) in the specified folder path — see any sibling connector for a fuller reference
     async listNodes(_options: ListNodesOptions): Promise<ListNodesResult> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -185,13 +187,14 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Preview the contents of the object node with the specified path — see dpuse-connector-dropbox for a fuller reference
     async previewObject(_options: PreviewObjectOptions): Promise<PreviewObjectResult> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -199,14 +202,15 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Remove one or more records from the specified object node — see dpuse-connector-dexie-js for a fuller reference
     // eslint-disable-next-line sonarjs/no-identical-functions -- placeholder stub, implement per action before shipping
     async removeRecords(_options: RemoveRecordsOptions): Promise<void> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -214,13 +218,14 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Retrieve all chunks from the specified object node (no sibling reference implementation exists yet)
     async retrieveChunks(options: RetrieveChunksOptions, chunk: (data: Uint8Array) => void, complete: () => void): Promise<void> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -228,7 +233,7 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
@@ -238,7 +243,8 @@ export class Connector implements ConnectorInterface {
         chunk: (typeId: RecordRetrievalTypeId, records: ParsedRecord[]) => void,
         complete: (result: RetrieveRecordsSummary) => void
     ): Promise<void> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -246,14 +252,15 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 
     // Upsert one or more records into the specified object node — see dpuse-connector-dexie-js for a fuller reference
     // eslint-disable-next-line sonarjs/no-identical-functions -- placeholder stub, implement per action before shipping
     async upsertRecords(_options: UpsertRecordsOptions): Promise<void> {
-        this.abortController = new AbortController();
+        const abortController = new AbortController();
+        this.abortController = abortController;
 
         try {
             await Promise.resolve();
@@ -261,7 +268,7 @@ export class Connector implements ConnectorInterface {
         } catch (error) {
             throw normalizeToError(error);
         } finally {
-            this.abortController = undefined;
+            if (this.abortController === abortController) this.abortController = undefined;
         }
     }
 }
