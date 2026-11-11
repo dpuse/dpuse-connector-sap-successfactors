@@ -6,22 +6,7 @@
     "description": {
         "en": "Provides access to SAP SuccessFactors account(s) for retrieving data."
     },
-    "actionNames": [
-        "abortOperation",
-        "auditObjectContent",
-        "createObject",
-        "describeConnection",
-        "dropObject",
-        "findObject",
-        "getReadableStream",
-        "getRecord",
-        "listNodes",
-        "previewObject",
-        "removeRecords",
-        "retrieveChunks",
-        "retrieveRecords",
-        "upsertRecords"
-    ],
+    "actionNames": [],
     "category": null,
     "categoryId": "application",
     "firstCreatedAt": null,
@@ -50,9 +35,9 @@
     "statusId": "alpha",
     "typeId": "connector",
     "usage": null,
-    "usageId": "bidirectional",
+    "usageId": "unknown",
     "vendorAccountURL": null,
     "vendorDocumentationURL": null,
     "vendorHomeURL": null,
-    "version": "1.0.116"
+    "version": "1.0.117"
 }

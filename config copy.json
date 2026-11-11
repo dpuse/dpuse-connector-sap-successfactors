@@ -20,7 +20,6 @@
         "listNodes",
         "previewObject",
         "removeRecords",
-        "retrieveChunks",
         "retrieveRecords",
         "upsertRecords"
     ],
